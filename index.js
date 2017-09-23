@@ -1,5 +1,5 @@
-var lh = require('LyftHandler.js');
-var th = require("TwilioHandler.js");
+var lh = require("backend/LyftHandler.js");
+var th = require("backend/TwilioHandler.js");
 var http = require('http');
 var express = require('express');
 var twilio = require('twilio');
