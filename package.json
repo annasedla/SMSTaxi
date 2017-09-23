@@ -25,6 +25,7 @@
     "http": "latest",
     "mongodb": "latest",
     "node-lyft": "latest",
+    "request": "^2.82.0",
     "twilio": "latest"
   },
   "devDependencies": {

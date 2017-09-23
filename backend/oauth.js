@@ -19,7 +19,7 @@ exports.handleAuthorization = function (req, res, next) {
   /* redirect with state */
   res.redirect(
     config.LYFT_API_URI + '/oauth/authorize'
-    + '?client_id='     + config.LYFT_CLIENT_ID
+    + '?client_id='     + process.env.LYFT_CLIENT_ID | config.LYFT_CLIENT_ID
     + '&response_type=' + 'code'
     + '&scope='         + 'offline%20public%20profile%20rides.read%20rides.request'
     + '&state='         + state
@@ -47,16 +47,17 @@ exports.handleLanding = function (req, res, next) {
 
 exports.handleRevocation = function (req, res, next) {
   res.redirect(
-    config.LYFT_WWW_URI
+    process.env.LYFT_WWW_URI | config.LYFT_WWW_URI
   );
 };
 
 exports.finalAuthorization = function (req, res, code, state, next) {
   res.redirect(
-    config.LYFT_API_URI + '/oauth/token'
-    + '?client_id='     + config.LYFT_CLIENT_ID + ':SANDBOX-' + config.LYFT_CLIENT_SECRET 
+    (process.env.LYFT_API_URI | config.LYFT_API_URI) + '/oauth/token'
+    + '?client_id='     + (process.env.LYFT_CLIENT_ID | config.LYFT_CLIENT_ID) + ':SANDBOX-' + (process.env.LYFT_CLIENT_SECRET | config.LYFT_CLIENT_SECRET)
     + '&grant_type='    + 'authorization_code'
     + '&codec ='        + code
-    + '&state='         + state
+    + '&state='         + state;
+
   );
 }
