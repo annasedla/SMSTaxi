@@ -13,7 +13,7 @@ http.createServer(app).listen(port, function () {
 });
 
 app.get("/", function(req, res){
-  res.sendFile("./frontend/index.html");
+  res.sendFile(__dirname + "/frontend/index.html");
 });
 
 app.get("/lyft", function(req, res){
