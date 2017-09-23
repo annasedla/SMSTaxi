@@ -1,11 +1,23 @@
+var lh = require('LyftHandler.js');
+var th = require("TwilioHandler.js");
 var http = require('http');
 var express = require('express');
 var twilio = require('twilio');
 
 var app = express();
 
-http.createServer(app).listen(1337, function () {
-  console.log("Express server listening on port 1337");
+var port = process.env.port || 3001
+
+http.createServer(app).listen(port, function () {
+  console.log("Express server listening on port "+port);
+});
+
+app.get("/", function(req, res){
+  res.sendfile("index.html");
+});
+
+app.get("/lyft", function(req, res){
+  lh.getUser("14017145717", "1776");
 });
 
 app.post('/sms', function(req, res) {
