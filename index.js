@@ -9,7 +9,7 @@ var port = process.env.port || 5757
 
 //connect database
 var MongoClient = require('mongodb').MongoClient, assert = require('assert');
-var dburl = 'mongodb://localhost:27017';
+var dburl = 'mongodb://13.72.76.129:27017';
 MongoClient.connect(dburl, function(err, db) {
   assert.equal(null, err);
   console.log("Connected successfully to mongo");
