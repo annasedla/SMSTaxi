@@ -58,3 +58,6 @@ typings/
 .env
 
 .DS_Store
+
+#authorization for Lyft
+backend/config.js

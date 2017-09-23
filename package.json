@@ -22,7 +22,8 @@
     "node-lyft": "latest",
     "express": "latest",
     "http": "latest",
-    "twilio": "latest"
+    "twilio": "latest",
+    "express-session": "latest"
   },
   "devDependencies":{
     "yarn": "latest"
