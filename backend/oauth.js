@@ -57,7 +57,7 @@ exports.finalAuthorization = function (req, res, code, state, next) {
     + '?client_id='     + (process.env.LYFT_CLIENT_ID | config.LYFT_CLIENT_ID) + ':SANDBOX-' + (process.env.LYFT_CLIENT_SECRET | config.LYFT_CLIENT_SECRET)
     + '&grant_type='    + 'authorization_code'
     + '&codec ='        + code
-    + '&state='         + state;
+    + '&state='         + state
 
   );
 }
