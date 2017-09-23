@@ -7,6 +7,8 @@ var messagingResponse = require('twilio').twiml.MessagingResponse;
 var app = express();
 var port = process.env.port || 5757
 
+var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+
 http.createServer(app).listen(port, function () {
   console.log("Express server listening on port "+port);
 });

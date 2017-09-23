@@ -19,13 +19,15 @@
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith",
   "license": "MIT",
   "dependencies": {
-    "node-lyft": "latest",
+    "assert": "latest",
     "express": "latest",
+    "express-session": "latest",
     "http": "latest",
-    "twilio": "latest",
-    "express-session": "latest"
+    "mongodb": "latest",
+    "node-lyft": "latest",
+    "twilio": "latest"
   },
-  "devDependencies":{
+  "devDependencies": {
     "yarn": "latest"
   }
 }
