@@ -15,9 +15,13 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/frontend/index.html");
 });
 
-app.get("/lyft", function(req, res){
-  oa.handleAuthorization(req, res);
+app.get("/confirmed", function(req,res){
+  if(req.query){
+    res.send(req.query);
+  }
 });
+
+app.get("/lyft", oa.handleAuthorization(req, res));
 
 //TODO: Make it call twilio handeler
 app.post('/sms', function(req, res) {
