@@ -1,19 +1,19 @@
-var lh = require("backend/LyftHandler.js");
-var th = require("backend/TwilioHandler.js");
+var lh = require("./backend/LyftHandler.js");
+var th = require("./backend/TwilioHandler.js");
 var http = require('http');
 var express = require('express');
 var twilio = require('twilio');
 
 var app = express();
 
-var port = process.env.port || 3001
+var port = process.env.port || 5757
 
 http.createServer(app).listen(port, function () {
   console.log("Express server listening on port "+port);
 });
 
 app.get("/", function(req, res){
-  res.sendfile("index.html");
+  res.sendFile("./frontend/index.html");
 });
 
 app.get("/lyft", function(req, res){
