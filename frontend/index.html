@@ -5,7 +5,40 @@
 			Welcome! 
 		</title>
 	</head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<body>
-		<p>Click here to order a Lyft! </p>
+		<p>Put your phone number below. Please don't have any spaces; in the form: 3335559999. </p>
+		<form>
+		  	Name:<br>
+		  	<input type="text" name="name"><br>
+		  	Phone Number:<br>
+		  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10">
+		  	<button onclick="masterFunction()"> Confirm </button>
+		</form> 
+        <script type="text/javascript">
+        	function masterFunction(){
+        		var isNumbers = allnumeric(document.getElementById("phoneNumber").value);
+        		if(isNumbers){
+        			getNum();
+        		}
+        		else{
+        			alert("please only enter numbers");
+        			var negOne = -1;
+        			return negOne.toString();
+        		}
+        	}
+        	function getNum() {
+        		var num = document.getElementById("phoneNumber").value;
+   				return num.toString();
+ 			}
+ 			function allnumeric(inputtxt){  
+		        var numbers = /^[0-9]+$/;  
+		        if(inputtxt.match(numbers)) {    
+		        	return true;  
+		        } else {      
+		        	return false;  
+		    	}  
+       		}   
+        </script>
 	</body>
 </html>
