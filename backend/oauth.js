@@ -50,3 +50,13 @@ exports.handleRevocation = function (req, res, next) {
     config.LYFT_WWW_URI
   );
 };
+
+exports.finalAuthorization = function (req, res, code, state, next) {
+  res.redirect(
+    config.LYFT_API_URI + '/oauth/token'
+    + '?client_id='     + config.LYFT_CLIENT_ID + ':SANDBOX-' + config.LYFT_CLIENT_SECRET 
+    + '&grant_type='    + 'authorization_code'
+    + '&codec ='        + code
+    + '&state='         + state
+  );
+}
