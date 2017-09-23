@@ -19,8 +19,12 @@
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith",
   "license": "MIT",
   "dependencies": {
+    "node-lyft": "latest",
     "express": "latest",
     "http": "latest",
     "twillio": "latest"
+  },
+  "devDependencies":{
+    "yarn": "latest"
   }
 }
