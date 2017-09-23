@@ -2,7 +2,7 @@ var lh = require("./backend/LyftHandler.js");
 var th = require("./backend/TwilioHandler.js");
 var http = require('http');
 var express = require('express');
-var twilio = require('twilio');
+var messagingResponse = require('twilio').twiml.MessagingResponse;
 
 var app = express();
 
@@ -21,8 +21,7 @@ app.get("/lyft", function(req, res){
 });
 
 app.post('/sms', function(req, res) {
-  var twilio = require('twilio');
-  var twiml = new twilio.TwimlResponse();
+  var twiml = new messagingResponse();
   twiml.message('Baby carrots are just cut up normal carrots.');
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
