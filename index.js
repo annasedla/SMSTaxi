@@ -21,8 +21,10 @@ app.get("/lyft", function(req, res){
 });
 
 app.post('/sms', function(req, res) {
+  var twilio = require('twilio');
   var twiml = new twilio.TwimlResponse();
   twiml.message('Baby carrots are just cut up normal carrots.');
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
 });
+
