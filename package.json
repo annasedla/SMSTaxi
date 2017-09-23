@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js; npm update"
+    "start": "npm update; node index.js; "
   },
   "keywords": [
     "SMS",
@@ -22,7 +22,7 @@
     "node-lyft": "latest",
     "express": "latest",
     "http": "latest",
-    "twillio": "latest"
+    "twilio": "latest"
   },
   "devDependencies":{
     "yarn": "latest"
