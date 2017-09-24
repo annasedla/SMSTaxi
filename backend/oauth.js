@@ -52,15 +52,30 @@ exports.handleRevocation = function (req, res, next) {
 };
 
 exports.finalAuthorization = function (req, res, next) {
-  request.post(
-    process.env.LYFT_API_URI + '/oauth/token'
-    + '?client_id='     + (process.env.LYFT_CLIENT_ID) + ':SANDBOX-' + (process.env.LYFT_CLIENT_SECRET)
-    + '&grant_type='    + 'authorization_code'
-    + '&codec ='        + req.query.code
-    + '&state='         + req.query.state,
-    function(req, ress, body){
-      console.log("ok it worked");
-      console.log(body);
-    }
-  );
+
+  var headers = {
+      'Content-Type': 'application/json'
+  };
+
+  var dataString = '{"grant_type": "authorization_code", "code": "'+req.query.code+'"}';
+
+  var options = {
+      url: 'https://api.lyft.com/oauth/token',
+      method: 'POST',
+      headers: headers,
+      body: dataString,
+      auth: {
+          'user': process.env.LYFT_CLIENT_ID,
+          'pass': process.env.LYFT_CLIENT_SECRET
+      }
+  };
+
+  function callback(error, response, body) {
+      if (!error && response.statusCode == 200) {
+          console.log("haha sweaty");
+          console.log(body);
+      }
+  }
+
+  request(options, callback);
 }
