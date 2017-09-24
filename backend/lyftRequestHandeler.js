@@ -11,7 +11,7 @@ let defaultClient = lyft.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: User Authentication
 //let accessToken = defaultClient.authentications['User Authentication'].accessToken;
-let accessToken = db.run(SELECT access FROM user_info ORDER BY id DESC LIMIT 1)
+let accessToken = db.run(SELECT access FROM user_info ORDER BY id DESC LIMIT 1);
 let ride = {'ride_type' : 'lyft', 'origin' : {'lat' : 37.77663, 'lng' : -122.39227 },  'destination' : {'lat' : 37.771, 'lng' : -122.39123, 'address' : 'Mission Bay Boulevard North' }};
 
 let req = {
