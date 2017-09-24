@@ -52,7 +52,7 @@ exports.handleRevocation = function (req, res, next) {
 };
 
 exports.finalAuthorization = function (req, res, next) {
-  request.get(
+  request.post(
     process.env.LYFT_API_URI + '/oauth/token'
     + '?client_id='     + (process.env.LYFT_CLIENT_ID) + ':SANDBOX-' + (process.env.LYFT_CLIENT_SECRET)
     + '&grant_type='    + 'authorization_code'
