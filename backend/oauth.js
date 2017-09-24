@@ -13,11 +13,9 @@ var request = require('request');
 /*
 * Authorization
 */
-exports.handleAuthorization = function (req, res, next) {
-  /* generate state value */
-  var state = Date.now().toString();
+exports.handleAuthorization = function (req, res, state, next) {
   /* store state in session */
-  req.state = state; //req.session.state
+  req.state = state;
   /* redirect with state */
   res.redirect(
     process.env.LYFT_API_URI + '/oauth/authorize'
