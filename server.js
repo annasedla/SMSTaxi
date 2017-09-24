@@ -6,6 +6,10 @@ var express = require('express');
 var messagingResponse = require('twilio').twiml.MessagingResponse;
 var app = express();
 var port = process.env.PORT || 5757;
+//new database
+var sqlite3 = require('sqlite3').verbose(); //variables for databases
+var db = new sqlite3.Database('mydb.db');
+
 
 //connect database
 /*
@@ -34,10 +38,25 @@ app.get("/confirmed", function(req,res){
 });
 
 app.get("/lyft", function(req,res){
-  oa.handleAuthorization(req, res, request.query.state)
+  oa.handleAuthorization(req, res, request.query.state);
+
+  /*
+  *Sending information that is filled out in the form into the database
+  */
+      // intergrating databases
+      db.serialize(function() {
+        var name = req.param('name'); // database columns
+        var number = req.param('phoneNumber');
+
+
+        db.run("CREATE TABLE if not exists user_info (id INTEGER primary key, name TEXT, phoneNumber TEXT");
+        var stmt = db.prepare("INSERT INTO user_info (name, phoneNumber) VALUES (?, ?)");
+        stmt.run([name, phoneNumber]);
+        stmt.finalize();
+      });
+
 });
 
-//TODO: Make it call twilio handeler
 app.post('/sms', function(req, res) {
   th.onSms(req, res);
 });

@@ -14,6 +14,7 @@
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith",
   "license": "MIT",
   "dependencies": {
+    "sqlite": "latest",
     "assert": "latest",
     "dotenv": "^4.0.0",
     "express": "latest",

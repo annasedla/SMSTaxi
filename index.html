@@ -48,31 +48,33 @@
 			<p>SMS<span style="color: #ea0b8c;">Taxi</span> was made by Anna Sedlackova, Vinvent Portelli, and Michael Smith with help from Sponsors and other attendees at MHacks x. </p>
 		</div>
         <script type="text/javascript">
-        	function masterFunction(){
-        		var isNumbers = allnumeric(document.getElementById("phoneNumber").value);
-        		if(isNumbers){
-        			alert("Thank you for signing up, you will recieve a text from us shortly.");
-        			getNum();
-        		}
-        		else{
-        			alert("Make sure you only entered numbers.");
-        			var negOne = -1;
-        			return negOne.toString();
-        		}
-						window.location.replace("https://taxisms.azurewebsites.net/lyft?state=" + isNumbers);
-        	}
-        	function getNum() {
-        		var num = document.getElementById("phoneNumber").value;
-   				return num.toString();
- 			}
- 			function allnumeric(inputtxt){
-		        var numbers = /^[0-9]+$/;
-		        if(inputtxt.match(numbers)) {
-		        	return true;
-		        } else {
-		        	return false;
-			    	}
-       		}
+				function masterFunction(req,res){
+				  var isNumbers = allnumeric(document.getElementById("phoneNumber").value);
+				  if(isNumbers){
+				    alert("Thank you for signing up, you will recieve a text from us shortly.");
+				    getNum();
+				  }
+				  else{
+				    alert("Make sure you only entered numbers.");
+				    var negOne = -1;
+				    return negOne.toString();
+				  }
+				  window.location.replace("https://taxisms.azurewebsites.net/lyft?state=" + isNumbers);
+
+				function getNum() {
+				  var num = document.getElementById("phoneNumber").value;
+				return num.toString();
+				}
+
+				function allnumeric(inputtxt){
+				  var numbers = /^[0-9]+$/;
+				  if(inputtxt.match(numbers)) {
+				    return true;
+				  } else {
+				    return false;
+				  }
+				}
+
         </script>
 	</body>
 </html>
