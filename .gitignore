@@ -60,6 +60,6 @@ typings/
 .DS_Store
 
 #authorization for Lyft
-config
+
 
 dbtest.js
