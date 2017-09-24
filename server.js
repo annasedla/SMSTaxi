@@ -37,8 +37,5 @@ app.get("/lyft", function(req,res){
 
 //TODO: Make it call twilio handeler
 app.post('/sms', function(req, res) {
-  var twiml = new messagingResponse();
-  twiml.message('Baby carrots are just cut up normal carrots.');
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+  th.onSms(req, res);
 });
