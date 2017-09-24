@@ -11,10 +11,6 @@
     "Lyft",
     "MHacks X"
   ],
-  "engines": {
-    "node": "6.9.1",
-    "npm": "4.5.0"
-  },
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith",
   "license": "MIT",
   "dependencies": {
