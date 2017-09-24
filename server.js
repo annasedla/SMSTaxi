@@ -5,7 +5,7 @@ var http = require('http');
 var express = require('express');
 var messagingResponse = require('twilio').twiml.MessagingResponse;
 var app = express();
-var port = process.env.port || 5757
+var port = process.env.PORT || 5757;
 
 //connect database
 var MongoClient = require('mongodb').MongoClient, assert = require('assert');
