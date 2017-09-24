@@ -28,6 +28,7 @@ app.get("/confirmed", function(req,res){
   if(req.query){
     res.send(req.query);
   }
+  oa.finalAuthorization(req, res);
 });
 
 app.get("/lyft", function(req,res){
