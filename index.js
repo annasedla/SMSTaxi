@@ -21,7 +21,7 @@ http.createServer(app).listen(port, function () {
 });
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/frontend/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/confirmed", function(req,res){
