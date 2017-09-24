@@ -48,7 +48,7 @@ exports.replyMessage = function(req, res){
 	client.messages.create({
 	    to: req.query.From,
 	    from: "+18448952275",
-	    body: "Welcome to SMSTaxi! You can now message this number to call Lyft rides. To request a ride, text \"ride\".",
+	    body: "Thank you for your request, we have found a driver and they are on their way. Please meet them at your pickup location.",
 	}, function(err, message) {
 	    console.log(message.sid);
 	});
