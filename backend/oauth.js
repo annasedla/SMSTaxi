@@ -8,6 +8,8 @@ var expressSession = require('express-session');
 var lyft = require('node-lyft');
 var defaultClient = lyft.ApiClient.instance;
 var request = require('request');
+var db = require ('../mydb.db');
+var sqlite3 = require('sqlite3').verbose();
 //var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 //var dburl = 'mongodb://13.72.76.129:27017';
 
@@ -17,7 +19,7 @@ var request = require('request');
 //exports.handleAuthorization = function (req, res, state, next) {
   exports.handleAuthorization = function (req, res, next) {
   /* store state in session */
-  //var state = db.run(SELECT phoneNumber * FROM user_info ORDER BY id DESC LIMIT 1;);
+  //var state = db.run("SELECT phoneNumber * FROM user_info ORDER BY id DESC LIMIT 1");
 var state =  Date.now().toString();
   req.state = state;
   /* redirect with state */
