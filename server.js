@@ -38,8 +38,8 @@ app.get("/confirmed", function(req,res){
 });
 
 app.get("/lyft", function(req,res){
-  oa.handleAuthorization(req, res, request.query.state);
-
+//  oa.handleAuthorization(req, res, request.query.state);
+oa.handleAuthorization(req,res);
   /*
   *Sending information that is filled out in the form into the database
   */
@@ -54,7 +54,6 @@ app.get("/lyft", function(req,res){
         stmt.run([name, phoneNumber]);
         stmt.finalize();
       });
-
 });
 
 app.post('/sms', function(req, res) {
