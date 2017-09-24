@@ -4,25 +4,53 @@
 		<title>
 			Welcome! 
 		</title>
+		<!-- 
+		What is SMS taxi.     Sign up
+					picture
+		technology    picture
+		Who we are
+		a -->
+
+		<link rel="stylesheet" href="stylesheet.css">
 	</head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<body>
-		<p>Put your phone number below. Please don't have any spaces; in the form: 3335559999. </p>
-		<form>
-		  	Name:<br>
-		  	<input type="text" name="name"><br>
-		  	Phone Number:<br>
-		  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10">
-		  	<button onclick="masterFunction()"> Confirm </button>
-		</form> 
+	<body style="font-family: sans-serif;">
+		<div id="title">
+			<p style="font-size: 50px; text-align: center;"><span>SMS</span><span style="color: #ea0b8c;">Taxi</span></p>
+		</div>
+		<div id="what is smstaxi">
+			<h3>What is SMS<span style="color: #ea0b8c;">Taxi</span>?</h3>
+			<p>SMS<span style="color: #ea0b8c;">Taxi</span> ultalizes widespread cellular technology to bring the ridesharing to the masses. Current ridesharing platforms provide convient, fast, and affordable transportation to many. Unfortunatly, current systems require all users to use smartphones and have an internet connection. This excludes two large groups of people: those without smartphones and those without data. These two groups represent almost 25% of the American population and many more overseas. In India, only 22% of the population own a smartphone, creating a large market for SMS<span style="color: #ea0b8c;">Taxi</span>. Further, SMS<span style="color: #ea0b8c;">Taxi</span> will soon be cross-platform, providing users with more ride options.</p>
+		</div>
+		<div id="sign_up">
+			<p style="text-align: center; font-size: 20px;">Sign up for SMS<span style="color: #ea0b8c;">Taxi</span>!</p>
+			<form style="text-align: center;">
+			  	Name:<br>
+			  	<input style="margin-bottom: 10px;" type="text" id="name" name="name"><br>
+			  	Phone Number:<br>
+			  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10"> <br/>
+			  	<p style="font-size: 10px;">Please don't enter spaces or non-numeric characters.</p>
+			  	<button style="margin-top: 15px; background-color: white; color: #ea0b8c; border: none; font-size: 20px;" onclick="masterFunction()"> Confirm </button>
+			</form> 
+		</div>
+		<div id="bigPicture">
+			
+		</div>
+		<div id="technology">
+			
+		</div>
+		<div id="small picture">
+			
+		</div>
         <script type="text/javascript">
         	function masterFunction(){
         		var isNumbers = allnumeric(document.getElementById("phoneNumber").value);
         		if(isNumbers){
+        			alert("Thank you for signing up, you will recieve a text from us shortly.");
         			getNum();
         		}
         		else{
-        			alert("please only enter numbers");
+        			alert("Make sure you only entered numbers.");
         			var negOne = -1;
         			return negOne.toString();
         		}
@@ -32,7 +60,7 @@
    				return num.toString();
  			}
  			function allnumeric(inputtxt){  
-		        var numbers = /^[0-9]+$/;  a
+		        var numbers = /^[0-9]+$/;  
 		        if(inputtxt.match(numbers)) {    
 		        	return true;  
 		        } else {      
