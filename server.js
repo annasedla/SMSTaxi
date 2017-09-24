@@ -55,6 +55,11 @@ oa.handleAuthorization(req,res);
       });
 });
 
-app.post('/sms', function(req, res) {
-  th.onSms(req, res);
+// app.post('/sms', function(req, res) {
+//   th.onSms(req, res);
+// });
+
+app.get('/sms', function(req, res){
+  console.log(req);
+  th.replyMessage(req, res);
 });
