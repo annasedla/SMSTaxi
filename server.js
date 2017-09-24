@@ -8,6 +8,7 @@ var app = express();
 var port = process.env.PORT || 5757;
 
 //connect database
+/*
 var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 var dburl = 'mongodb://13.72.76.129:27017';
 MongoClient.connect(dburl, function(err, db) {
@@ -15,8 +16,7 @@ MongoClient.connect(dburl, function(err, db) {
   console.log("Connected successfully to mongo");
   db.close();
 });
-
-db.createCollection('users', function(err, collection) {}); //does this work???? TODO
+*/
 
 http.createServer(app).listen(port, function () {
   console.log("Express server listening on port "+port);
@@ -33,8 +33,8 @@ app.get("/confirmed", function(req,res){
   oa.finalAuthorization(req, res);
 });
 
-app.get("/lyft", function(req,res, state){
-  oa.handleAuthorization(req, res, state)
+app.get("/lyft", function(req,res){
+  oa.handleAuthorization(req, res, request.query.state)
 });
 
 //TODO: Make it call twilio handeler
