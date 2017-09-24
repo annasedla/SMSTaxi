@@ -54,13 +54,12 @@ exports.handleRevocation = function (req, res, next) {
 };
 
 exports.finalAuthorization = function (req, res, next) {
-  console.log(req);
   request.get(
     process.env.LYFT_API_URI + '/oauth/token'
     + '?client_id='     + (process.env.LYFT_CLIENT_ID) + ':SANDBOX-' + (process.env.LYFT_CLIENT_SECRET)
     + '&grant_type='    + 'authorization_code'
-    + '&codec ='        + req.code
-    + '&state='         + req.state,
+    + '&codec ='        + req.query.code
+    + '&state='         + req.query.state,
     function(req, ress, body){
       console.log("ok it worked");
       console.log(req);
