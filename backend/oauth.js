@@ -8,16 +8,17 @@ var expressSession = require('express-session');
 var lyft = require('node-lyft');
 var defaultClient = lyft.ApiClient.instance;
 var request = require('request');
-var MongoClient = require('mongodb').MongoClient, assert = require('assert');
-var dburl = 'mongodb://13.72.76.129:27017';
-
-
+//var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+//var dburl = 'mongodb://13.72.76.129:27017';
 
 /*
 * Authorization
 */
-exports.handleAuthorization = function (req, res, state, next) {
+//exports.handleAuthorization = function (req, res, state, next) {
+  exports.handleAuthorization = function (req, res, next) {
   /* store state in session */
+  var state = Date.now().toString();
+
   req.state = state;
   /* redirect with state */
   res.redirect(
@@ -79,11 +80,11 @@ exports.finalAuthorization = function (req, res, next) {
           console.log(body);
 
           obj = {};
-          obj.state = req.query.state;
+
           obj.access_token = body.access_token;
           obj.refresh_token = body.refresh_token;
 
-
+          users[req.query.state] = obj;
       }
   }
 
