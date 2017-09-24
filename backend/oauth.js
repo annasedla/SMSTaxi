@@ -62,7 +62,7 @@ exports.finalAuthorization = function (req, res, next) {
     + '&state='         + req.query.state,
     function(req, ress, body){
       console.log("ok it worked");
-      console.log(req);
+      console.log(body);
     }
   );
 }
