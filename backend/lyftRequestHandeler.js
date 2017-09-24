@@ -1,32 +1,45 @@
-// /* global configuration */
-// var config = require('./config');
-// var lyft = require('node-lyft');
-// let defaultClient = lyft.ApiClient.instance;
-//
-// // Configure OAuth2 access token for authorization: User Authentication
-// defaultClient.authentications['User Authentication'].accessToken = '3-LEGGED-OAUTH-TOKEN';
-// let apiInstance = new lyft.UserApi();
-//
-// /**
-// * REQUEST A LYFT RIDE
-// */
-// let request = new lyft.Ride('lyft', new lyft.Location(37.77663, -122.39227));
-// request.destination = new lyft.Location(37.771, -122.39123);
-//
-// apiInstance.newRide(request).then((data) => {
-//   console.log('API called successfully. Returned data: ' + data); //TODO instead of console send a message
-// }, (error) => {
-//   console.error(error);
-// });
-// 
-// /**
-// * CANCEL A LYFT RIDE
-// */
-//
-// let id = "<ride_id>"; // String | The ID of the ride
-//
-// apiInstance.cancelRide(id).then(() => {
-//   console.log('API called successfully.');
-// }, (error) => {
-//   console.error(error);
-// });
+
+/*Global Configuration*/
+
+var request = require('request');
+var lyft = require('node-lyft');
+let defaultClient = lyft.ApiClient.instance;
+
+/**
+* REQUEST A LYFT RIDE
+*/
+
+// Configure OAuth2 access token for authorization: User Authentication
+let accessToken = defaultClient.authentications['User Authentication'].accessToken;
+let ride = {'ride_type' : 'lyft', 'origin' : {'lat' : 37.77663, 'lng' : -122.39227 },  'destination' : {'lat' : 37.771, 'lng' : -122.39123, 'address' : 'Mission Bay Boulevard North' }};
+
+let req = {
+  method: 'post',
+  body: ride,
+  json: true,
+  url: 'https://api.lyft.com/v1/rides',
+  headers: {
+    'Authorization': 'Bearer ' + accessToken
+  }
+}
+
+function callback(error, response, body) {
+  console.log(error);
+  console.log(response);
+  console.log(body);
+}
+
+request(req,callback);
+
+
+/**
+* CANCEL A LYFT RIDE
+*/
+/*
+let id = "<ride_id>"; // String | The ID of the ride
+
+apiInstance.cancelRide(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});*/
