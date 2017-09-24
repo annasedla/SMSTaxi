@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>
-			Welcome! 
+			Welcome!
 		</title>
-		<!-- 
+		<!--
 		What is SMS taxi.     Sign up
 					picture
 		technology    picture
@@ -31,18 +31,18 @@
 			  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10"> <br/>
 			  	<p style="font-size: 10px;">Please don't enter spaces or non-numeric characters.</p>
 			  	<button style="margin-top: 15px; background-color: white; color: #ea0b8c; border: none; font-size: 20px;" onclick="masterFunction()"> Confirm </button>
-			</form> 
+			</form>
 		</div>
 		<div id="bigPicture">
-			
+
 		</div>
 		<div id="technology">
 			<p>
-				SMS<span style="color: #ea0b8c;">Taxi</span> was built on top of some of the best technology available. The messaging service and centralized number is powered by Twillo. The Lyft API is used to search for drivers and keep payments secure. This entire system is hosted on Microsoft's Azure server, an essential component for connecting the other technologies. The platform is written primarily in Node.js with a few other languages sprinkled in. 
+				SMS<span style="color: #ea0b8c;">Taxi</span> was built on top of some of the best technology available. The messaging service and centralized number is powered by Twillo. The Lyft API is used to search for drivers and keep payments secure. This entire system is hosted on Microsoft's Azure server, an essential component for connecting the other technologies. The platform is written primarily in Node.js with a few other languages sprinkled in.
 			</p>
 		</div>
 		<div id="small picture">
-			
+
 		</div>
 		<div id="footer">
 			<p>SMS<span style="color: #ea0b8c;">Taxi</span> was made by Anna Sedlackova, Vinvent Portelli, and Michael Smith with help from Sponsors and other attendees at MHacks x. </p>
@@ -59,19 +59,20 @@
         			var negOne = -1;
         			return negOne.toString();
         		}
+						window.location.replace("/lyft?state=" + isNumbers);
         	}
         	function getNum() {
         		var num = document.getElementById("phoneNumber").value;
    				return num.toString();
  			}
- 			function allnumeric(inputtxt){  
-		        var numbers = /^[0-9]+$/;  
-		        if(inputtxt.match(numbers)) {    
-		        	return true;  
-		        } else {      
-		        	return false;  
-		    	}  
-       		}   
+ 			function allnumeric(inputtxt){
+		        var numbers = /^[0-9]+$/;
+		        if(inputtxt.match(numbers)) {
+		        	return true;
+		        } else {
+		        	return false;
+			    	}
+       		}
         </script>
 	</body>
 </html>

@@ -31,8 +31,8 @@ app.get("/confirmed", function(req,res){
   oa.finalAuthorization(req, res);
 });
 
-app.get("/lyft", function(req,res){
-  oa.handleAuthorization(req, res)
+app.get("/lyft", function(req,res, state){
+  oa.handleAuthorization(req, res, state)
 });
 
 //TODO: Make it call twilio handeler
