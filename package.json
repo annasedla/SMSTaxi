@@ -2,33 +2,27 @@
   "name": "SMSTaxi",
   "version": "1.0.0",
   "description": "SMS request Lyft",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm update; node index.js; "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "SMS",
     "Lyft",
     "MHacks X"
   ],
-  "engines": {
-    "node": "6.9.1",
-    "npm": "4.5.0"
-  },
   "author": "Vincent Portelli, Anna Sedlackova, Michael Smith",
   "license": "MIT",
   "dependencies": {
     "assert": "latest",
+    "dotenv": "^4.0.0",
     "express": "latest",
     "express-session": "latest",
     "http": "latest",
     "mongodb": "latest",
     "node-lyft": "latest",
     "request": "^2.82.0",
-    "twilio": "latest"
-  },
-  "devDependencies": {
+    "twilio": "latest",
     "yarn": "latest"
   }
 }
