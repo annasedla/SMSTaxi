@@ -15,36 +15,44 @@
 	</head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<body style="font-family: sans-serif;">
+	<div style="width: 50%; margin-left: 25%;">
 		<div id="title">
 			<p style="font-size: 50px; text-align: center;"><span>SMS</span><span style="color: #ea0b8c;">Taxi</span></p>
+			<p style="font-size: 15px; text-align: center; margin-top: -40px;"> Get a Lyft: (844) 895-2275</p>
 		</div>
-		<div id="what is smstaxi">
-			<h3>What is SMS<span style="color: #ea0b8c;">Taxi</span>?</h3>
-			<p>SMS<span style="color: #ea0b8c;">Taxi</span> ultalizes widespread cellular technology to bring the ridesharing to the masses. Current ridesharing platforms provide convient, fast, and affordable transportation to many. Unfortunatly, current systems require all users to use smartphones and have an internet connection. This excludes two large groups of people: those without smartphones and those without data. These two groups represent almost 25% of the American population and many more overseas. In India, only 22% of the population own a smartphone, creating a large market for SMS<span style="color: #ea0b8c;">Taxi</span>. Further, SMS<span style="color: #ea0b8c;">Taxi</span> will soon be cross-platform, providing users with more ride options.</p>
-		</div>
-		<div id="sign_up">
-			<p style="text-align: center; font-size: 20px;">Sign up for SMS<span style="color: #ea0b8c;">Taxi</span>!</p>
-			<div style="text-align: center;">
-			  	Name:<br>
-			  	<input style="margin-bottom: 10px;" type="text" id="name" name="name"><br>
-			  	Phone Number:<br>
-			  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10"> <br/>
-			  	<p style="font-size: 10px;">Please don't enter spaces or non-numeric characters.</p>
-			  	<button style="margin-top: 15px; background-color: white; color: #ea0b8c; border: none; font-size: 20px;" onclick="masterFunction()"> Confirm </button>
+		<div id="top_block" style="display: inline;">
+			<div id="what is smstaxi" style="width: 60%; float: left; text-align: justify;">
+				<h3>What is SMS<span style="color: #ea0b8c;">Taxi</span>?</h3>
+				<p>SMS<span style="color: #ea0b8c;">Taxi</span> ultalizes widespread cellular technology to bring the ridesharing to the masses. Current ridesharing platforms provide convient, fast, and affordable transportation to many. Unfortunatly, current systems require all users to use smartphones and have an internet connection. This excludes two large groups of people: those without smartphones and those without data. These two groups represent almost 25% of the American population and many more overseas. In India, only 22% of the population own a smartphone, creating a large market for SMS<span style="color: #ea0b8c;">Taxi</span>. Further, SMS<span style="color: #ea0b8c;">Taxi</span> will soon be cross-platform, providing users with more ride options.</p>
+			</div>
+			<div id="sign_up" style="width: 35%; float: right; margin-top: 30px; margin-bottom: 70px;">
+				<p style="text-align: center; font-size: 20px;">Sign up for SMS<span style="color: #ea0b8c;">Taxi</span>!</p>
+				<div style="text-align: center;">
+				  	Name:<br>
+				  	<input style="margin-bottom: 10px;" type="text" id="name" name="name"><br>
+				  	Phone Number:<br>
+				  	<input type="text" id="phoneNumber" name="phoneNumber" maxlength="10"> <br/>
+				  	<p style="font-size: 10px;">Please don't enter spaces or non-numeric characters.</p>
+				  	<button style="margin-top: 15px; background-color: white; color: #ea0b8c; border: none; font-size: 20px;" onclick="masterFunction()"> Confirm </button>
+				</div>
 			</div>
 		</div>
 		<div id="bigPicture">
 
 		</div>
-		<div id="technology">
-			<p>
-				SMS<span style="color: #ea0b8c;">Taxi</span> was built on top of some of the best technology available. The messaging service and centralized number is powered by Twillo. The Lyft API is used to search for drivers and keep payments secure. This entire system is hosted on Microsoft's Azure server, an essential component for connecting the other technologies. The platform is written primarily in Node.js with a few other languages sprinkled in.
-			</p>
-		</div>
-		<div id="small picture">
+		<div id="bottom_block" style="display: inline; margin-top: 30px;">
+			<div id="technology" style="width: 100%; margin-top: 40px;">
+				<h3>How does SMS<span style="color: #ea0b8c;">Taxi</span> work? </h3>
+				<p>
+					SMS<span style="color: #ea0b8c;">Taxi</span> was built on top of some of the best technology available. The messaging service and centralized number is powered by Twillo. The Lyft API is used to search for drivers and keep payments secure. This entire system is hosted on Microsoft's Azure server, an essential component for connecting the other technologies. The platform is written primarily in Node.js with a few other languages sprinkled in.
+				</p>
+			</div>
+			<div id="small picture">
 
+			</div>
 		</div>
-		<div id="footer">
+	</div>
+		<div id="footer" style="position: fixed; bottom: 0px;">
 			<p>SMS<span style="color: #ea0b8c;">Taxi</span> was made by Anna Sedlackova, Vinvent Portelli, and Michael Smith with help from Sponsors and other attendees at MHacks x. </p>
 		</div>
         <script type="text/javascript">

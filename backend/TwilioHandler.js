@@ -48,7 +48,7 @@ exports.replyMessage = function(req, res){
 	client.messages.create({
 	    to: req.query.From,
 	    from: "+18448952275",
-	    body: "Thank you for your request, we have found a driver and they are on their way. Please meet them at your pickup location.",
+	    body: "Thank you for your request, we have found a driver and they are on their way. Please meet them at your pickup location. *Note: This is using the Lyft Sandbox tool; a driver is not actully coming.* ",
 	}, function(err, message) {
 	    console.log(message.sid);
 	});
