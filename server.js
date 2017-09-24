@@ -16,6 +16,8 @@ MongoClient.connect(dburl, function(err, db) {
   db.close();
 });
 
+db.createCollection('users', function(err, collection) {}); //does this work???? TODO
+
 http.createServer(app).listen(port, function () {
   console.log("Express server listening on port "+port);
 });

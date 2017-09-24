@@ -8,6 +8,9 @@ var expressSession = require('express-session');
 var lyft = require('node-lyft');
 var defaultClient = lyft.ApiClient.instance;
 var request = require('request');
+var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+var dburl = 'mongodb://13.72.76.129:27017';
+
 
 
 /*
@@ -72,8 +75,15 @@ exports.finalAuthorization = function (req, res, next) {
 
   function callback(error, response, body) {
       if (!error && response.statusCode == 200) {
-          console.log("haha sweaty");
+
           console.log(body);
+
+          obj = {};
+          obj.state = req.query.state;
+          obj.access_token = body.access_token;
+          obj.refresh_token = body.refresh_token;
+
+
       }
   }
 
